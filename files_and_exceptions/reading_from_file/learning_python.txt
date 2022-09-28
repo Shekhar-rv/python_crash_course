@@ -1,0 +1,3 @@
+In Python you can save data as Tuples, Dictionaries and Lists.
+In Python you can leverage OOP techniques.
+In Python you have access to many third party libraries.
