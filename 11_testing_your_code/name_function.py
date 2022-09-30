@@ -1,6 +1,9 @@
-def get_formatted_name(first, last):
+def get_formatted_name(first, last, middle=''):
     """Generate a neatly formatted full name."""
-    full_name = " ".join([first, last])
+    if middle:
+        full_name = " ".join([first, middle, last])
+    else:
+        full_name = " ".join([first, last])
     return full_name.title()
 
 
