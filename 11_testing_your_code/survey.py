@@ -1,3 +1,6 @@
+from telnetlib import STATUS
+
+
 class AnonymousSurvey():
     """Collect anonymous answers to a survey question."""
 
@@ -19,7 +22,6 @@ class AnonymousSurvey():
         """Show all the responses that have been given."""
         print("Survey results:")
         # We will remove duplicate responses
-        # self.responses = list(set(self.responses))
         for response in self.responses:
             print('- ' + response)
 
