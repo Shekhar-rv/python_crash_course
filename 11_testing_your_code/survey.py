@@ -1,6 +1,3 @@
-from telnetlib import STATUS
-
-
 class AnonymousSurvey():
     """Collect anonymous answers to a survey question."""
 
