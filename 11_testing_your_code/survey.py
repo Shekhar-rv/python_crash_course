@@ -12,13 +12,14 @@ class AnonymousSurvey():
 
     def store_response(self, new_response:str):
         """Store a single response to the survey."""
-        self.responses.append(new_response)
+        if new_response not in self.responses:
+            self.responses.append(new_response)
 
     def show_results(self):
         """Show all the responses that have been given."""
         print("Survey results:")
         # We will remove duplicate responses
-        self.responses = list(set(self.responses))
+        # self.responses = list(set(self.responses))
         for response in self.responses:
             print('- ' + response)
 

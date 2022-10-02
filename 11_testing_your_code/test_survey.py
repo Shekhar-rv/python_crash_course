@@ -35,7 +35,8 @@ class TestAnonymusSurvey(unittest.TestCase):
             self.my_survey.store_response(response)
         # Not the most efficient way to test, need to figure out a better 
         # approach to test for no duplicates.
-        self.assertNotEqual(self.responses, list(set(self.my_survey.responses)))
-
+        self.assertNotEqual(self.responses, self.my_survey.responses)
+        print(f"There are {len(self.responses)} entries in the reponses")
+        print(f"There are {len(self.my_survey.responses)} unique responses")
 
 unittest.main()
