@@ -2,7 +2,7 @@ import pygame
 from settings import Settings
 from ship import Ship
 from game_functions import check_events, update_screen
-from game_character import Character
+# from game_character import Character
 
 
 def run_game():
@@ -17,7 +17,7 @@ def run_game():
     # Make a ship.
     ship = Ship(ai_settings=ai_settings, screen=screen)
     # Make a game character
-    character = Character(screen=screen)
+    # character = Character(screen=screen)
 
     # Start the main loop for the game.
     while True:
@@ -26,7 +26,10 @@ def run_game():
         ship.update()
         # Redraw the screen during each pass through the loop.
         update_screen(
-            ai_settings=ai_settings, screen=screen, ship=ship, character=character
+            ai_settings=ai_settings, 
+            screen=screen, 
+            ship=ship, 
+            # character=character
         )
 
 

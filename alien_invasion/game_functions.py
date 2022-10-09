@@ -36,12 +36,13 @@ def check_events(ship):
             check_keyup_events(event, ship)
 
 
-def update_screen(ai_settings, screen, ship, character):
+def update_screen(ai_settings, screen, ship):
     """Update images on the screen and flip to the new screen."""
     # Redraw the screen during each pass through the loop.
     screen.fill(ai_settings.bg_color)
     ship.blitme()
-    character.blitme()
+    # character.blitme()
+    # add `character` as a parameter to the update_screen method to use it.
 
     # Make the most recently drawn screen visible.
     pygame.display.flip()
