@@ -1,8 +1,9 @@
 from json import load, dump
 
+
 def get_stored_username():
     """Get stored username if available."""
-    filename = 'username.json'
+    filename = "username.json"
     try:
         with open(filename) as f_obj:
             username = load(f_obj)
@@ -11,20 +12,22 @@ def get_stored_username():
     else:
         return username
 
+
 def get_new_username():
     """Prompt for a new username."""
     username = input("What is your name? ")
-    filename = 'username.json'
-    with open(filename, 'w') as file_object:
+    filename = "username.json"
+    with open(filename, "w") as file_object:
         dump(username, file_object)
     return username
 
+
 def greet_user():
-    '''Load the username, if it has been stored previously.
-     Otherwise, prompt for the username and store it.'''
+    """Load the username, if it has been stored previously.
+    Otherwise, prompt for the username and store it."""
     username = get_stored_username()
     current_user = input(f"Is this your username: {username}, 'yes' or 'no'? ")
-    if current_user == 'no':
+    if current_user == "no":
         username = get_new_username()
     else:
         if username:
@@ -33,5 +36,6 @@ def greet_user():
             username = get_new_username()
             print(f"Next time you login, we will remember you, {username}")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     greet_user()

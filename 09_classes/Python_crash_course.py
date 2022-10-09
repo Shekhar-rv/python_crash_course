@@ -1,14 +1,18 @@
 from random import randint
 
-class Restuarant():
+
+class Restuarant:
     """ """
+
     def __init__(self, resturant_name, cuisine_type):
         self.resturant_name = resturant_name
         self.cuisine_type = cuisine_type
         self.number_served = 0
 
     def describe_resturant(self):
-        print(f"Restuarant name:{self.resturant_name}\nCuisine type:{self.cuisine_type}")
+        print(
+            f"Restuarant name:{self.resturant_name}\nCuisine type:{self.cuisine_type}"
+        )
 
     def open_restaurant(self):
         print(f"{self.resturant_name} is now open!")
@@ -19,7 +23,8 @@ class Restuarant():
     def increment_number_served(self, increment_number):
         self.number_served = self.number_served + increment_number
 
-# Creating class instances 
+
+# Creating class instances
 rest_1 = Restuarant("Maba", "Indian")
 rest_2 = Restuarant("Tiny Shop", "Korean")
 rest_3 = Restuarant("Tzuki", "Japanese")
@@ -30,9 +35,9 @@ for resturant in resturants:
     resturant.describe_resturant()
     resturant.open_restaurant()
     print("Number served:", resturant.number_served)
-    resturant.set_number_served(randint(10,50))
+    resturant.set_number_served(randint(10, 50))
     print("New number served:", resturant.number_served)
-    resturant.increment_number_served(randint(25,100))
+    resturant.increment_number_served(randint(25, 100))
     print("Number served as of now:", resturant.number_served)
 
 
@@ -48,8 +53,9 @@ for resturant in resturants:
 
 class IceCreamStand(Restuarant):
     """Inherits from the Restaurant class"""
+
     def __init__(self, resturant_name, cuisine_type):
-        # Initialise 
+        # Initialise
         super().__init__(resturant_name, cuisine_type)
         self.flavours = ["Mango", "Vanilla", "Chocolate", "Pistacchio"]
 
@@ -72,8 +78,9 @@ ics1.show_flavors()
 # for each user.
 
 
-class User():
+class User:
     """ """
+
     def __init__(self, first_name, last_name, age, city):
         self.first_name = first_name
         self.last_name = last_name
@@ -82,7 +89,9 @@ class User():
         self.login_attempts = 0
 
     def describe_user(self):
-        print(f"{self.first_name} {self.last_name}, who comes from {self.city} is {self.age} years old!")
+        print(
+            f"{self.first_name} {self.last_name}, who comes from {self.city} is {self.age} years old!"
+        )
 
     def greet_user(self):
         print(f"Hello {self.first_name}, welcome back to the Matrix!")
@@ -92,6 +101,7 @@ class User():
 
     def reset_login_attempts(self):
         self.login_attempts = 0
+
 
 # Create a few class instances
 
@@ -126,17 +136,25 @@ for user in users:
 # as an attribute in the Admin class. Create a new instance of Admin and use your
 # method to show its privileges.
 
+
 class Admin(User):
     """ """
+
     def __init__(self, first_name, last_name, age, city):
         super().__init__(first_name, last_name, age, city)
         self.privileges = Privileges().show_privileges()
 
 
-class Privileges():
+class Privileges:
     """ """
+
     def __init__(self):
-        self.privileges = ["can add post", "can delete post" , "can create new user", "can ban user"]
+        self.privileges = [
+            "can add post",
+            "can delete post",
+            "can create new user",
+            "can ban user",
+        ]
 
     def show_privileges(self):
         return self.privileges
@@ -155,28 +173,29 @@ print(f"These are the privileges of the Admin: {admin1.privileges}")
 # then call get_range() a second time after upgrading the battery. You should
 # see an increase in the car’s range.
 
-class Car():
+
+class Car:
     """A simple attempt to represent a car."""
-    
+
     def __init__(self, make, model, year):
         self.make = make
         self.model = model
         self.year = year
         self.odometer_reading = 0
-    
+
     def get_descriptive_name(self):
-        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+        long_name = str(self.year) + " " + self.make + " " + self.model
         return long_name.title()
-    
+
     def read_odometer(self):
         print("This car has " + str(self.odometer_reading) + " miles on it.")
-    
+
     def update_odometer(self, mileage):
         if mileage >= self.odometer_reading:
             self.odometer_reading = mileage
         else:
             print("You can't roll back an odometer!")
-    
+
     def increment_odometer(self, miles):
         self.odometer_reading += miles
 
@@ -201,8 +220,8 @@ class ElectricCar(Car):
         print("This car doesn't need a gas tank!")
 
 
-class Battery():
-    """A simple attempt to model a battery for an electric car.""" 
+class Battery:
+    """A simple attempt to model a battery for an electric car."""
 
     def __init__(self, battery_size=70):
         """Initialize the battery's attributes."""
@@ -210,7 +229,7 @@ class Battery():
 
     def describe_battery(self):
         """Print a statement describing the battery size."""
-        print("This car has a " + str(self.battery_size) + "-kWh battery.") 
+        print("This car has a " + str(self.battery_size) + "-kWh battery.")
 
     def get_range(self):
         """Print a statement about the range this battery provides."""
@@ -223,12 +242,12 @@ class Battery():
         print(message)
 
     def upgrade_battery(self):
-        """ Changes the battery size to 85 if its 70."""
+        """Changes the battery size to 85 if its 70."""
         if self.battery_size == 70:
             self.battery_size = 85
 
 
-my_tesla = ElectricCar('tesla', 'model s', 2016)
+my_tesla = ElectricCar("tesla", "model s", 2016)
 print(my_tesla.get_descriptive_name())
 my_tesla.battery.describe_battery()
 my_tesla.fill_gas_tank()

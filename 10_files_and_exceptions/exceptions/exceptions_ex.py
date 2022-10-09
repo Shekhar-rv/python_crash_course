@@ -10,6 +10,7 @@
 # so the user can continue entering numbers even if they make a mistake and
 # enter text instead of a number.
 
+
 def addition():
     while True:
         try:
@@ -20,6 +21,7 @@ def addition():
         else:
             print(number_1 + number_2)
             break
+
 
 # Cats and Dogs: Make two files, cats.txt and dogs.txt. Store at least three
 # names of cats in the first file and three names of dogs in the second file. Write
@@ -32,43 +34,48 @@ def addition():
 # Silent Cats and Dogs: Modify your except block in Exercise 10-8 to fail
 # silently if either file is missing.
 
+
 def content_viewer(file_name):
     try:
         with open(file_name) as file_object:
             contents = file_object.read()
     except FileNotFoundError:
         # print(f"The {filename} could not be found, please check the file name.")
-        pass # To fail silently.
-    else:    
+        pass  # To fail silently.
+    else:
         print(contents)
+
 
 # Common Words: Visit Project Gutenberg (http://gutenberg.org/ )
 # and find a few texts you’d like to analyze. Download the text files for these
 # works, or copy the raw text from your browser into a text file on your
 # computer.You can use the count() method to find out how many times a word or
 # phrase appears in a string. For example, the following code counts the number
-# of times 'row' appears in a string. Converting the string to lowercase using 
+# of times 'row' appears in a string. Converting the string to lowercase using
 # lower() catchesall appearances of the word you’re looking for, regardless of how it’s
 # formatted. Write a program that reads the files you found at Project Gutenberg and
 # determines how many times the word 'the' appears in each text.
+
 
 def word_counter(file_name):
     try:
         with open(file_name) as file_object:
             content = file_object.read()
-            word_count = content.lower().count('the')
+            word_count = content.lower().count("the")
     except FileNotFoundError:
         print(f"The {filename} could not be found, please check the file name.")
         # pass # To fail silently.
-    else:    
-        print(f"In the file {file_name} the are {word_count} instances of the word 'the'.")
+    else:
+        print(
+            f"In the file {file_name} the are {word_count} instances of the word 'the'."
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # addition()
     # filenames = ['cats.txt', 'dogs.txt', 'ferrets.txt']
     # for filename in filenames:
     #     content_viewer(filename)
-    filenames = ['alice.txt', 'blindfold.txt', 'anthem.txt', 'test.txt']
+    filenames = ["alice.txt", "blindfold.txt", "anthem.txt", "test.txt"]
     for filename in filenames:
         word_counter(filename)

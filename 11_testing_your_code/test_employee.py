@@ -1,6 +1,7 @@
 import unittest
 from employee import Employee
 
+
 class TestEmployee(unittest.TestCase):
     """Tests for each module in Class Employee"""
 

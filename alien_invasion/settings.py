@@ -1,6 +1,7 @@
 # All the setting required for pygame will be stored here
 
-class Settings():
+
+class Settings:
     """A class to store all the settings for Alien Invasion"""
 
     def __init__(self) -> None:
