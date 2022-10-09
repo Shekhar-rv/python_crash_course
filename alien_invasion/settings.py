@@ -14,3 +14,8 @@ class Settings:
         self.image_height = 120
         # Ship settings
         self.ship_speed_factor = 1.5
+        # Bullet settings
+        self.bullet_speed_factor = 1
+        self.bullet_width = 3
+        self.bullet_height = 15
+        self.bullet_color = 57, 255, 20 # Neon Green
