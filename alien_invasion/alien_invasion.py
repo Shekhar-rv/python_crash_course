@@ -1,4 +1,3 @@
-from numpy import character
 import pygame
 from settings import Settings
 from ship import Ship
@@ -16,7 +15,7 @@ def run_game():
     pygame.display.set_caption("Alien Invasion")
 
     # Make a ship.
-    ship = Ship(screen=screen)
+    ship = Ship(ai_settings=ai_settings, screen=screen)
     # Make a game character
     character = Character(screen=screen)
 

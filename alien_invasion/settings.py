@@ -12,3 +12,5 @@ class Settings:
         self.bg_color = (12, 22, 79)
         self.image_width = 60
         self.image_height = 120
+        # Ship settings
+        self.ship_speed_factor = 1.5

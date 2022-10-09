@@ -82,6 +82,6 @@ def add_user(first_name, last_name, **kwargs):
     user_del
 
 
-def describe_user(user):
+# def describe_user(user):
     
 
